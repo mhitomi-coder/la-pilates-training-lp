@@ -625,3 +625,66 @@ a { color: inherit; }
   .numbers { padding: 32px 0; }
   .num-item strong { font-size: 28px; }
 }
+
+/* ===== v3: photography ===== */
+.hero-art img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 18px 50px rgba(60, 40, 20, 0.18);
+  display: block;
+}
+
+.photo-band {
+  margin: 0;
+  line-height: 0;
+  max-height: 460px;
+  overflow: hidden;
+}
+.photo-band img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  object-position: center 60%;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 0;
+}
+.gallery figure { margin: 0; }
+.gallery img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: block;
+}
+.gallery figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gallery figcaption::before {
+  content: "";
+  width: 18px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+@media (max-width: 800px) {
+  .gallery { grid-template-columns: 1fr; }
+  .photo-band img { height: 300px; }
+}
